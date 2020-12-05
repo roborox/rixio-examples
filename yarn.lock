@@ -1423,6 +1423,39 @@
     schema-utils "^2.6.5"
     source-map "^0.7.3"
 
+"@rixio/lens@^0.4.4":
+  version "0.4.4"
+  resolved "https://registry.yarnpkg.com/@rixio/lens/-/lens-0.4.4.tgz#071a2197ab9f88129401567d88d1cedd9cd5140c"
+  integrity sha512-VhQJl/2DqOgKaR4LXplPIcmtro0PxO917icVh5r0fRVaxn4IQLKCBVx2ctYAhcApAibIMH3VE4BsfXK1cSz4Eg==
+
+"@rixio/rxjs-atom@0.3.7", "@rixio/rxjs-atom@^0.3.7":
+  version "0.3.7"
+  resolved "https://registry.yarnpkg.com/@rixio/rxjs-atom/-/rxjs-atom-0.3.7.tgz#13f2ed803e0c684091f29f75af0fea2266263b0a"
+  integrity sha512-Kk7stIeYn1BPFK085vWkFpAJ4g+fx6+WYKCBva6wS/UynIBO+QbHpFxJ/zohryHKfdg8mrdhpVtp8n8G/xRhfA==
+  dependencies:
+    "@rixio/lens" "^0.4.4"
+
+"@rixio/rxjs-cache@0.0.17":
+  version "0.0.17"
+  resolved "https://registry.yarnpkg.com/@rixio/rxjs-cache/-/rxjs-cache-0.0.17.tgz#c82c4cb4076b0160ff738e51b364198008d423df"
+  integrity sha512-bst8I4iY7chHs6zvB1is2crYEjzOvErDzvgptt+HanYyJgq9/UUwXMG9Pjlp2oQIt2aLeEO1v9jSJZkjrUun4w==
+  dependencies:
+    "@rixio/rxjs-atom" "^0.3.7"
+    "@rixio/rxjs-wrapped" "^0.2.3"
+
+"@rixio/rxjs-react@0.8.14":
+  version "0.8.14"
+  resolved "https://registry.yarnpkg.com/@rixio/rxjs-react/-/rxjs-react-0.8.14.tgz#0cb3ab45de54e04f5b3466fe4f5db82febd48ea5"
+  integrity sha512-MDnDY/T4NrDWS+1542ZJ5dsUH7LQnZkUquz3mBot2UM65QQ7dvzwP5/DKlBZC0TGNQdPPQpqA29jrFxtQdih3w==
+  dependencies:
+    "@rixio/lens" "^0.4.4"
+    "@rixio/rxjs-wrapped" "^0.2.3"
+
+"@rixio/rxjs-wrapped@^0.2.3":
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/@rixio/rxjs-wrapped/-/rxjs-wrapped-0.2.3.tgz#e8cc200715f402a8aa2611750364bb2742e23bcc"
+  integrity sha512-Za1HsPy0q25N7kOrjalYM6/O8jG+vJFS4YfA5QEKzOzdM9doSmTGxYKyMPKfScT0vlWMBCv2d3Dkzttd30alHA==
+
 "@rollup/plugin-node-resolve@^7.1.1":
   version "7.1.3"
   resolved "https://registry.yarnpkg.com/@rollup/plugin-node-resolve/-/plugin-node-resolve-7.1.3.tgz#80de384edfbd7bfc9101164910f86078151a3eca"
@@ -5648,6 +5681,11 @@ immer@7.0.9:
   resolved "https://registry.yarnpkg.com/immer/-/immer-7.0.9.tgz#28e7552c21d39dd76feccd2b800b7bc86ee4a62e"
   integrity sha512-Vs/gxoM4DqNAYR7pugIxi0Xc8XAun/uy7AQu4fLLqaTBHxjOP9pJ266Q9MWA/ly4z6rAFZbvViOtihxUZ7O28A==
 
+immutable@4.0.0-rc.12:
+  version "4.0.0-rc.12"
+  resolved "https://registry.yarnpkg.com/immutable/-/immutable-4.0.0-rc.12.tgz#ca59a7e4c19ae8d9bf74a97bdf0f6e2f2a5d0217"
+  integrity sha512-0M2XxkZLx/mi3t8NVwIm1g8nHoEmM9p9UBl/G9k4+hm0kBgOVdMV/B3CY5dQ8qG8qc80NN4gDV4HQv6FTJ5q7A==
+
 import-cwd@^2.0.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/import-cwd/-/import-cwd-2.1.0.tgz#aa6cf36e722761285cb371ec6519f53e2435b0a9"
@@ -9492,6 +9530,13 @@ run-queue@^1.0.0, run-queue@^1.0.3:
   dependencies:
     aproba "^1.1.1"
 
+rxjs@6.6.3:
+  version "6.6.3"
+  resolved "https://registry.yarnpkg.com/rxjs/-/rxjs-6.6.3.tgz#8ca84635c4daa900c0d3967a6ee7ac60271ee552"
+  integrity sha512-trsQc+xYYXZ3urjOiJOuCOa5N3jAZ3eiSpQB5hIT8zGlL2QfnHLJ2r7GMkBGuIausdJN1OneaI6gQlsqNHHmZQ==
+  dependencies:
+    tslib "^1.9.0"
+
 safe-buffer@5.1.2, safe-buffer@~5.1.0, safe-buffer@~5.1.1:
   version "5.1.2"
   resolved "https://registry.yarnpkg.com/safe-buffer/-/safe-buffer-5.1.2.tgz#991ec69d296e0313747d59bdfd2b745c35f8828d"
@@ -10629,7 +10674,7 @@ typedarray@^0.0.6:
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
 
-typescript@^4.0.3:
+typescript@4.1.2:
   version "4.1.2"
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.1.2.tgz#6369ef22516fe5e10304aae5a5c4862db55380e9"
   integrity sha512-thGloWsGH3SOxv1SoY7QojKi0tc+8FnOmiarEGMbd/lar7QOEd3hvlx3Fp5y6FlDUGl9L+pd4n2e+oToGMmhRQ==
@@ -10931,11 +10976,6 @@ wbuf@^1.1.0, wbuf@^1.7.3:
   integrity sha512-O84QOnr0icsbFGLS0O3bI5FswxzRr8/gHwWkDlQFskhSPryQXvrTMxjxGP4+iWYoauLoBvfDpkrOauZ+0iZpDA==
   dependencies:
     minimalistic-assert "^1.0.0"
-
-web-vitals@^0.2.4:
-  version "0.2.4"
-  resolved "https://registry.yarnpkg.com/web-vitals/-/web-vitals-0.2.4.tgz#ec3df43c834a207fd7cdefd732b2987896e08511"
-  integrity sha512-6BjspCO9VriYy12z356nL6JBS0GYeEcA457YyRzD+dD6XYCQ75NKhcOHUMHentOE7OcVCIXXDvOm0jKFfQG2Gg==
 
 webidl-conversions@^5.0.0:
   version "5.0.0"
