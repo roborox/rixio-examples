@@ -22,7 +22,7 @@ const tab$ = Atom.create<Tab>("html")
 export function App() {
 	return (
 		<div>
-			{keys.map(tab => <TabSelector tab={tab}/>)}
+			{keys.map(tab => <TabSelector key={tab} tab={tab}/>)}
 			<div><Tabs tab$={tab$}/></div>
 		</div>
 	)
