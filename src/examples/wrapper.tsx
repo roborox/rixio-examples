@@ -11,11 +11,7 @@ export function Wrapper() {
 	return (
 		<>
 			<div style={{paddingBottom: 10}}>RxWrapper allows you to convert simple components to reactive. Also check pending and rejected props</div>
-			<RxWrapper
-				component={DisplayPerson}
-				person={actor$}
-				pending={<span>Loading...</span>}
-			/>
+			<RxWrapper component={DisplayPerson} person={actor$} pending={<span>Loading...</span>} />
 		</>
 	)
 }

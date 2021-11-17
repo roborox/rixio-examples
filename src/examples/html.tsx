@@ -1,16 +1,41 @@
 /* eslint-disable react/jsx-pascal-case */
-import React, { useMemo } from "react"
-import { from } from "rxjs"
-import { delay } from "rxjs/operators"
-import { R } from "@rixio/rxjs-react"
-import { getRandomNumber } from "../data/common"
+import React, { useCallback } from "react"
+import { forkJoin, from, of } from "rxjs"
+import { delay, map } from "rxjs/operators"
+import { Atom } from "@rixio/rxjs-atom"
+import { Rx, useRxOrThrow } from "@rixio/rxjs-react"
+
+const value = Atom.create<string>("")
+const rx$ = from(Promise.resolve()).pipe(
+	delay(500),
+	map(() => {
+		const v = value.get()
+		if (v !== "") {
+			return v
+		} else {
+			throw new Error("Is zero")
+		}
+	}),
+)
+const combined$ = forkJoin({ rx: rx$, value: of(10) })
 
 export function Html() {
-	const rx$ = useMemo(() => from(getRandomNumber(1000)).pipe(delay(500)), [])
 	return (
 		<>
-			<div style={{paddingBottom: 10}}>Components from R are reactive - every prop (including children) can be Observable. If observable doesn't immediately emit a value, component is not rendered</div>
-			<R.div>Random number: {rx$}</R.div>
+			<div>
+				<Input value={value}/>
+				<br/>
+				Value:
+				<Rx value$={combined$} rejected={(e, reload) => (<button onClick={() => reload()}>reload</button>)} pending="loading...">
+					{(value) => value.rx + "_" + value.value}
+				</Rx>
+			</div>
 		</>
 	)
+}
+
+function Input({ value }: { value: Atom<string> }) {
+	const text = useRxOrThrow(value)
+	const onChange = useCallback((e: React.ChangeEvent<HTMLInputElement>) => value.set(e.target.value), [value])
+	return <input value={text} type="text" onChange={onChange}/>
 }
